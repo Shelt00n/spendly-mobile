@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spendly — мобильное приложение учёта расходов</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#F3F4EF; --ink:#12131A; --muted:#6f7280; --lime:#C6F432; --line:#e2e3dc; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font:16px/1.55 Onest, system-ui, sans-serif; background:var(--bg); color:var(--ink); min-height:100vh; overflow-x:hidden; }
+  .wrap { max-width:1240px; margin:0 auto; padding:40px 24px 48px; display:grid; grid-template-columns:1fr 430px; gap:64px; align-items:center; }
+  .tag { display:inline-flex; gap:8px; align-items:center; background:var(--ink); color:var(--lime); padding:7px 14px; border-radius:99px; font-weight:600; font-size:13px; }
+  h1 { font:700 clamp(40px,5vw,66px)/1.02 Unbounded, sans-serif; letter-spacing:-.03em; margin:20px 0; }
+  h1 mark { background:var(--lime); padding:0 .12em; border-radius:.15em; }
+  .lead { font-size:18px; color:var(--muted); max-width:560px; }
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:34px 0 28px; }
+  .cell { background:#fff; border-radius:20px; padding:18px; border:1px solid var(--line); }
+  .cell b { display:block; font:600 15px Onest; margin:8px 0 4px; }
+  .cell p { font-size:13.5px; color:var(--muted); }
+  .cell span { font-size:22px; }
+  .stack { display:flex; flex-wrap:wrap; gap:8px; }
+  .stack span { padding:7px 13px; border-radius:99px; background:#fff; border:1px solid var(--line); font-size:13px; font-weight:500; }
+  .links { display:flex; gap:12px; margin-top:26px; flex-wrap:wrap; }
+  .links a { padding:13px 22px; border-radius:14px; font-weight:600; text-decoration:none; color:var(--ink); border:1px solid var(--ink); }
+  .links a.main { background:var(--ink); color:var(--lime); }
+  .phone-wrap { position:relative; justify-self:center; }
+  .phone-wrap::before { content:""; position:absolute; inset:-40px -60px; background:radial-gradient(circle, rgba(198,244,50,.55), transparent 62%); z-index:0; }
+  .phone { position:relative; z-index:1; width:400px; height:820px; border-radius:58px; padding:14px; background:#0b0c11; box-shadow:0 50px 100px -40px rgba(18,19,26,.6), inset 0 0 0 2px #2a2c36; }
+  .phone::after { content:""; position:absolute; top:24px; left:50%; transform:translateX(-50%); width:104px; height:28px; border-radius:20px; background:#0b0c11; z-index:3; }
+  .screen { width:100%; height:100%; border-radius:44px; overflow:hidden; background:var(--bg); display:flex; flex-direction:column; }
+  .status { height:50px; flex:none; display:flex; align-items:center; justify-content:space-between; padding:6px 30px 0; font:600 15px Onest; }
+  .status i { font-style:normal; letter-spacing:2px; font-size:12px; }
+  .phone iframe { width:100%; flex:1; border:0; background:var(--bg); }
+  footer { text-align:center; color:var(--muted); font-size:13px; padding-bottom:28px; }
+  @media (max-width:1000px){ .wrap{ grid-template-columns:1fr; } .grid{ grid-template-columns:1fr; } .phone{ width:min(400px,92vw); } }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <section>
+      <span class="tag">📱 React Native · iOS · Android · Web</span>
+      <h1>Деньги под&nbsp;контролем <mark>в&nbsp;два&nbsp;тапа</mark></h1>
+      <p class="lead">Spendly — кроссплатформенное приложение для учёта расходов и доходов: баланс, месячный бюджет, статистика по дням и категориям. Справа — настоящая веб-сборка приложения, ей можно пользоваться прямо сейчас.</p>
+      <div class="grid">
+        <div class="cell"><span>⚡</span><b>Быстрый ввод</b><p>Своя цифровая клавиатура и категории-чипсы: операция за 3 секунды.</p></div>
+        <div class="cell"><span>🎯</span><b>Бюджет</b><p>Прогресс месячного лимита и топ категорий трат.</p></div>
+        <div class="cell"><span>📊</span><b>Статистика</b><p>График за неделю и доли по категориям, расходы и доходы.</p></div>
+      </div>
+      <div class="stack"><span>React Native 0.88</span><span>Expo SDK 58</span><span>TypeScript</span><span>useReducer</span><span>react-native-web</span></div>
+      <div class="links">
+        <a class="main" href="app/">Открыть на весь экран</a>
+        <a href="https://github.com/Shelt00n/spendly-mobile">Код на GitHub</a>
+      </div>
+    </section>
+    <div class="phone-wrap"><div class="phone"><div class="screen"><div class="status"><span>9:41</span><i>●●● ▲ ▮</i></div><iframe src="app/" title="Spendly — демо приложения" loading="eager"></iframe></div></div></div>
+  </main>
+  <footer>Демо-проект · Егор Кинаш, разработка мобильных приложений</footer>
+</body>
+</html>

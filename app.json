@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "spendly-mobile",
+    "name": "Spendly",
     "slug": "spendly-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -19,7 +19,13 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "name": "Spendly — учёт расходов",
+      "themeColor": "#12131A",
+      "backgroundColor": "#F3F4EF"
+    },
+    "experiments": {
+      "baseUrl": "/spendly-mobile/app"
     }
   }
 }
